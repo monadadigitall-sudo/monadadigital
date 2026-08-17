@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atend-IA — Presença Digital e Atendimento Inteligente para seu Negócio</title>
+<meta name="description" content="Atend-IA oferece sites profissionais e atendente virtual no WhatsApp para pequenos e médios negócios. Atendimento automático 24h, mais clientes e mais faturamento.">
+<meta name="keywords" content="atendente virtual WhatsApp, chatbot para negócios, site profissional, presença digital, atendimento automático, bot WhatsApp">
+<meta name="author" content="Atend-IA">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Atend-IA — Presença Digital e Atendimento Inteligente">
+<meta property="og:description" content="Site profissional e atendente IA no WhatsApp para o seu negócio aparecer, atender e vender mais — 24 horas por dia.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&display=optional">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&display=optional" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" media="print" onload="this.media='all'">
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&display=optional">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap">
+</noscript>
+<style>
+:root {
+  --carvao:   #1A1714;
+  --bronze:  #6B5D4F;
+  --dourado:  #C9A227;
+  --dourado2: rgba(201,162,39,.12);
+  --branco: #FAF8F5;
+  --creme:  #F5F0E8;
+  --texto:  #1F1B17;
+  --mid:    #5C5650;
+  --borda:  rgba(201,162,39,.22);
+  --ff1:    'Syne', sans-serif;
+  --ff2:    'DM Sans', sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--ff2);color:var(--texto);background:var(--carvao);line-height:1.6;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--ff1);line-height:1.15}
+h1{font-size:clamp(2rem,4.5vw,3.6rem);font-weight:800}
+h2{font-size:clamp(1.7rem,3vw,2.6rem);font-weight:700}
+h3{font-size:clamp(1.1rem,1.8vw,1.45rem);font-weight:600}
+p{font-size:clamp(.92rem,1.4vw,1.05rem)}
+.container{max-width:1160px;margin:0 auto;padding:0 24px}
+.sec{padding:96px 0}
+.tag{display:inline-block;font-family:var(--ff2);font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--dourado);border:1px solid var(--borda);border-radius:100px;padding:4px 14px;margin-bottom:20px}
+.tag-dark{color:var(--bronze);border-color:rgba(27,79,114,.3)}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--ff2);font-size:.98rem;font-weight:600;border-radius:8px;padding:14px 28px;cursor:pointer;transition:all .2s;text-decoration:none;border:none}
+.btn-p{background:var(--dourado);color:var(--carvao)}
+.btn-p:hover{background:#D9BB55;transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,162,39,.35)}
+.btn-o{background:transparent;color:var(--branco);border:1.5px solid var(--borda)}
+.btn-o:hover{border-color:var(--dourado);color:var(--dourado)}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.on{opacity:1;transform:none}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;background:rgba(13,27,42,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.06)}
+.logo{font-family:var(--ff1);font-size:1.35rem;font-weight:800;color:var(--branco);text-decoration:none}
+.logo span{color:var(--dourado)}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{color:rgba(248,250,252,.68);text-decoration:none;font-size:.88rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--dourado)}
+.nav-r{display:flex;align-items:center;gap:10px}
+@media(max-width:768px){.nav-links{display:none}.btn-o.hide-m{display:none}}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding-top:80px}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg video{width:100%;height:100%;object-fit:cover;opacity:.45}
+.hero-bg-placeholder{width:100%;height:100%;background:linear-gradient(135deg,#1A1714 0%,#6B5D4F 50%,#1A1714 100%);display:flex;align-items:center;justify-content:center;color:rgba(201,162,39,.2);font-size:.9rem;font-style:italic}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(13,27,42,.92) 0%,rgba(13,27,42,.65) 55%,rgba(13,27,42,.3) 100%);z-index:1}
+.hero-content{position:relative;z-index:2;max-width:680px;padding:60px 0}
+.hero-content .tag{margin-bottom:24px}
+.hero h1{color:var(--branco);margin-bottom:8px}
+.hero h1 em{font-style:normal;color:var(--dourado)}
+.hero-sub{color:rgba(248,250,252,.7);font-size:clamp(.95rem,1.6vw,1.15rem);max-width:520px;margin:20px 0 36px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px}
+
+/* PIPELINE */
+.pipeline{display:flex;align-items:center;gap:0;margin-bottom:52px}
+.pnode{display:flex;flex-direction:column;align-items:center;gap:8px}
+.picon{width:62px;height:62px;border-radius:50%;border:1.5px solid rgba(201,162,39,.2);display:flex;align-items:center;justify-content:center;background:rgba(201,162,39,.06);transition:all .4s}
+.picon svg{width:26px;height:26px;stroke:rgba(201,162,39,.4);fill:none;stroke-width:1.8;transition:stroke .4s}
+.plabel{font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(248,250,252,.35);transition:color .4s}
+.pconn{width:56px;height:1.5px;background:rgba(201,162,39,.15);margin-bottom:26px;position:relative;overflow:hidden}
+.pconn::after{content:'';position:absolute;left:-100%;top:0;width:100%;height:100%;background:var(--dourado)}
+.pnode.on .picon{border-color:var(--dourado);background:rgba(201,162,39,.16);box-shadow:0 0 24px rgba(201,162,39,.3)}
+.pnode.on .picon svg{stroke:var(--dourado)}
+.pnode.on .plabel{color:var(--dourado)}
+.pconn.on::after{animation:cf .55s ease forwards}
+@keyframes cf{from{left:-100%}to{left:0}}
+
+/* HERO STATS */
+.hero-stats{display:flex;gap:16px;flex-wrap:wrap}
+.hstat{background:rgba(255,255,255,.07);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px 20px;min-width:130px}
+.hstat-num{font-family:var(--ff1);font-size:1.7rem;font-weight:800;color:var(--dourado);line-height:1}
+.hstat-label{font-size:.75rem;color:rgba(248,250,252,.55);margin-top:4px}
+
+/* DORES */
+.dores-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px;margin-top:48px}
+.dcard{background:white;border:1px solid rgba(0,0,0,.07);border-radius:12px;padding:26px 22px;transition:box-shadow .2s,transform .2s}
+.dcard:hover{box-shadow:0 8px 32px rgba(0,0,0,.08);transform:translateY(-3px)}
+.dicon{width:42px;height:42px;border-radius:10px;background:rgba(201,162,39,.1);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.dicon svg{width:20px;height:20px;stroke:var(--bronze);fill:none;stroke-width:2}
+.dcard h3{font-size:.98rem;color:var(--texto);margin-bottom:7px}
+.dcard p{font-size:.87rem;color:var(--mid)}
+
+/* CHARTS */
+.charts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px;margin-top:52px}
+.ccrd{background:white;border-radius:16px;padding:28px 24px;border:1px solid rgba(0,0,0,.06);box-shadow:0 2px 16px rgba(0,0,0,.04)}
+.ctitle{font-family:var(--ff1);font-size:.95rem;font-weight:700;color:var(--texto);margin-bottom:22px}
+.bar-chart{display:flex;flex-direction:column;gap:10px}
+.bar-row{display:flex;align-items:center;gap:10px}
+.bar-lbl{font-size:.77rem;color:var(--mid);min-width:88px;text-align:right}
+.bar-track{flex:1;height:26px;background:#F0ECE4;border-radius:6px;overflow:hidden}
+.bar-fill{height:100%;border-radius:6px;display:flex;align-items:center;padding-left:8px;font-size:.74rem;font-weight:700;color:white;width:0;transition:width 1.2s cubic-bezier(.4,0,.2,1)}
+.bf-g{background:linear-gradient(90deg,#0A7055,#C9A227)}
+.bf-o{background:linear-gradient(90deg,#E67E22,#F39C12)}
+.bf-r{background:linear-gradient(90deg,#C0392B,#E74C3C)}
+.donut-wrap{display:flex;align-items:center;gap:24px}
+.dlegend{display:flex;flex-direction:column;gap:9px}
+.dleg{display:flex;align-items:center;gap:7px;font-size:.82rem;color:var(--mid)}
+.ddot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.sbox{background:#F0ECE4;border-radius:10px;padding:18px 14px;text-align:center}
+.snum{font-family:var(--ff1);font-size:1.9rem;font-weight:800;color:var(--bronze)}
+.snum.c{color:var(--dourado);filter:brightness(.82)}
+.sdesc{font-size:.74rem;color:var(--mid);margin-top:3px;line-height:1.4}
+
+/* STEPS */
+.steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:28px;margin-top:52px}
+.step{text-align:center;padding:36px 26px;border:1px solid var(--borda);border-radius:16px;background:rgba(201,162,39,.04);transition:border-color .2s,background .2s}
+.step:hover{border-color:var(--dourado);background:rgba(201,162,39,.08)}
+.step-n{font-family:var(--ff1);font-size:2.8rem;font-weight:800;color:rgba(201,162,39,.18);line-height:1;margin-bottom:18px}
+.step h3{color:var(--branco);margin-bottom:10px}
+.step p{color:rgba(248,250,252,.58);font-size:.92rem}
+
+/* DEMO */
+.demo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px;margin-bottom:44px}
+.demo-card{border-radius:16px;overflow:hidden;border:1px solid rgba(0,0,0,.08);background:white;transition:transform .2s,box-shadow .2s}
+.demo-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.1)}
+.demo-img{width:100%;aspect-ratio:0.59;max-height:340px;background:var(--carvao);display:flex;align-items:center;justify-content:center;color:rgba(248,250,252,.28);font-size:.82rem;font-style:italic;overflow:hidden;position:relative}
+.demo-img img{width:100%;height:100%;object-fit:cover;object-position:top}
+.demo-body{padding:18px 18px 22px}
+.demo-body h3{color:var(--texto);font-size:.97rem;margin-bottom:5px}
+.demo-body p{color:var(--mid);font-size:.84rem}
+.demo-any{text-align:center;padding:28px;border:1.5px dashed rgba(201,162,39,.28);border-radius:16px;color:var(--mid)}
+.demo-any strong{color:var(--bronze);display:block;font-size:1.05rem;margin-bottom:5px}
+
+/* VIDEO */
+.vid-sec{background:var(--carvao);padding:72px 0}
+.vid-wrap{max-width:860px;margin:44px auto 0;border-radius:16px;overflow:hidden;border:1px solid var(--borda);box-shadow:0 0 60px rgba(201,162,39,.1);background:#000;position:relative}
+.vid-wrap video{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
+.vid-play-btn{position:absolute;inset:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:var(--branco);background:rgba(0,0,0,.32);border:none;cursor:pointer;transition:background .2s}
+.vid-play-btn:hover{background:rgba(0,0,0,.45)}
+.vid-play-btn .play-circle{width:64px;height:64px;border-radius:50%;background:var(--dourado);display:flex;align-items:center;justify-content:center;transition:transform .2s}
+.vid-play-btn:hover .play-circle{transform:scale(1.08)}
+.vid-play-btn svg{width:22px;height:22px;fill:var(--carvao);stroke:none;margin-left:2px}
+.vid-play-btn span{font-size:.9rem;font-weight:600}
+.vid-play-btn.hidden{display:none}
+
+/* PLANOS */
+.plans-hd{text-align:center;margin-bottom:52px}
+.plans-hd h2{color:var(--branco)}
+.plans-hd p{color:rgba(248,250,252,.58);margin-top:10px}
+.plans-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:22px;max-width:760px;margin:0 auto}
+.pcard{border:1px solid var(--borda);border-radius:20px;padding:38px 30px;background:rgba(255,255,255,.03);position:relative;transition:border-color .2s;overflow:hidden}
+.pcard::before{content:'';position:absolute;inset:-1px;border-radius:20px;background:radial-gradient(circle 220px at var(--mx,50%) var(--my,50%),rgba(201,162,39,.16),transparent);opacity:0;transition:opacity .35s;pointer-events:none}
+.pcard:hover::before{opacity:1}
+.pcard.feat{border-color:var(--dourado);background:rgba(201,162,39,.07)}
+.pbadge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--dourado);color:var(--carvao);font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 14px;border-radius:100px}
+.pname{font-family:var(--ff1);font-size:1.25rem;font-weight:700;color:var(--branco);margin-bottom:7px}
+.pdesc{font-size:.87rem;color:rgba(248,250,252,.48);margin-bottom:26px}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:32px}
+.plist li{display:flex;align-items:flex-start;gap:9px;font-size:.87rem;color:rgba(248,250,252,.78)}
+.plist li::before{content:'';width:17px;height:17px;flex-shrink:0;border-radius:50%;background:rgba(201,162,39,.13);border:1.5px solid var(--dourado);background-image:url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4L3.5 6.5L9 1' stroke='%2300C2FF' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center;margin-top:2px}
+.pcta{width:100%;justify-content:center}
+
+/* SERVIÇOS */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-top:48px}
+.scard{background:white;border-radius:16px;padding:32px 26px;border:1px solid rgba(0,0,0,.07);transition:transform .2s,box-shadow .2s}
+.scard:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,.09)}
+.scard-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.scard h3{color:var(--texto);margin-bottom:10px;font-size:1.05rem}
+.scard p{color:var(--mid);font-size:.88rem;line-height:1.6;margin-bottom:18px}
+.scard-tag{display:inline-block;font-size:.74rem;font-weight:600;padding:4px 12px;border-radius:100px}
+
+/* PROMOÇÃO + INDICA */
+.promo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px;margin-top:52px}
+.procard{border:1px solid var(--borda);border-radius:20px;padding:36px 28px;background:rgba(255,255,255,.03)}
+.procard.gold{border-color:rgba(255,193,7,.38);background:rgba(255,193,7,.05)}
+.procard h3{color:var(--branco);margin-bottom:10px;font-size:1.15rem}
+.procard p{color:rgba(248,250,252,.58);font-size:.88rem;line-height:1.6}
+.pro-hl{display:inline-block;margin-top:14px;padding:7px 14px;background:rgba(201,162,39,.11);border:1px solid var(--borda);border-radius:8px;font-size:.82rem;color:var(--dourado);font-weight:600}
+.procard.gold .pro-hl{background:rgba(255,193,7,.11);border-color:rgba(255,193,7,.28);color:#F6C90E}
+
+/* CONTATO */
+.ct-box{max-width:580px;margin:0 auto;text-align:center}
+.ct-box h2{color:var(--texto);margin-bottom:14px}
+.ct-box p{color:var(--mid);margin-bottom:32px}
+.ct-links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* FOOTER */
+footer{background:var(--carvao);border-top:1px solid rgba(255,255,255,.06);padding:32px 24px;text-align:center;color:rgba(248,250,252,.58);font-size:.82rem}
+footer strong{color:rgba(248,250,252,.55)}
+
+/* SECTION HEADINGS */
+.sh-dark{text-align:center;max-width:600px;margin:0 auto}
+.sh-dark h2{color:var(--branco)}
+.sh-dark p{color:rgba(248,250,252,.58);margin-top:10px}
+.sh-light{text-align:center;max-width:600px;margin:0 auto}
+.sh-light h2{color:var(--texto)}
+.sh-light p{color:var(--mid);margin-top:10px}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">Atend<span>-IA</span></a>
+  <ul class="nav-links">
+    <li><a href="#como-funciona">Como funciona</a></li>
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#planos">Planos</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <div class="nav-r">
+    <a href="#planos" class="btn btn-o hide-m" style="padding:10px 18px;font-size:.86rem">Ver planos</a>
+    <a href="https://wa.me/5548991366151" class="btn btn-p" style="padding:10px 18px;font-size:.86rem">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <video src="videos/hero-bg.mp4" autoplay muted loop playsinline></video>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="tag">Presença Digital + Atendimento Inteligente</div>
+
+      <div class="pipeline">
+        <div class="pnode" id="n0">
+          <div class="picon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="13" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div>
+          <span class="plabel">Site</span>
+        </div>
+        <div class="pconn" id="c0"></div>
+        <div class="pnode" id="n1">
+          <div class="picon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+          <span class="plabel">Atendente IA</span>
+        </div>
+        <div class="pconn" id="c1"></div>
+        <div class="pnode" id="n2">
+          <div class="picon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <span class="plabel">Você fatura mais</span>
+        </div>
+      </div>
+
+      <h1>Seu negócio <em>online.</em><br>Seu atendimento <em>automático.</em><br>Você fatura <em>mais.</em></h1>
+      <p class="hero-sub">Presença digital profissional e atendente inteligente no WhatsApp — para o seu negócio aparecer, atender e vender a qualquer hora.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/5548991366151" class="btn btn-p" id="cta-hero">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Quero uma demonstração
+        </a>
+        <a href="#como-funciona" class="btn btn-o">Como funciona →</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hstat"><div class="hstat-num">24h</div><div class="hstat-label">Atendimento ininterrupto</div></div>
+        <div class="hstat"><div class="hstat-num">3×</div><div class="hstat-label">Mais clientes convertidos</div></div>
+        <div class="hstat"><div class="hstat-num">+87%</div><div class="hstat-label">Buscam online antes de comprar</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMA -->
+<section class="sec" style="background:var(--creme)" id="problema">
+  <div class="container">
+    <div class="reveal sh-light">
+      <div class="tag tag-dark">Você se identifica?</div>
+      <h2>O cliente aparece.<br>Mas ninguém responde.</h2>
+      <p>Essas situações custam clientes todos os dias para negócios sem presença digital e atendimento automático.</p>
+    </div>
+    <div class="dores-grid">
+      <div class="dcard reveal">
+        <div class="dicon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3>Pedidos perdidos fora do horário</h3>
+        <p>Clientes mandam mensagem à noite ou no fim de semana e não recebem resposta. Vão para a concorrência.</p>
+      </div>
+      <div class="dcard reveal">
+        <div class="dicon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+        <h3>Sempre as mesmas perguntas</h3>
+        <p>Sua equipe perde horas respondendo horários, preços e informações básicas que poderiam ser automáticas.</p>
+      </div>
+      <div class="dcard reveal">
+        <div class="dicon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
+        <h3>Negócio invisível na internet</h3>
+        <p>Sem site e sem presença digital, o cliente pesquisa e encontra o concorrente. A decisão começa online.</p>
+      </div>
+      <div class="dcard reveal">
+        <div class="dicon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <h3>Equipe sobrecarregada</h3>
+        <p>Atender, produzir, receber clientes e ainda responder o WhatsApp ao mesmo tempo é impossível sem ajuda.</p>
+      </div>
+    </div>
+
+    <!-- GRÁFICOS -->
+    <div class="charts-grid">
+      <div class="ccrd reveal">
+        <p class="ctitle">Tempo de resposta × chance de fechar</p>
+        <div class="bar-chart">
+          <div class="bar-row"><span class="bar-lbl">Até 5 min</span><div class="bar-track"><div class="bar-fill bf-g" data-w="91%">91%</div></div></div>
+          <div class="bar-row"><span class="bar-lbl">Até 1 hora</span><div class="bar-track"><div class="bar-fill bf-o" data-w="52%">52%</div></div></div>
+          <div class="bar-row"><span class="bar-lbl">Mais de 1h</span><div class="bar-track"><div class="bar-fill bf-r" data-w="18%">18%</div></div></div>
+        </div>
+        <p style="font-size:.75rem;color:var(--mid);margin-top:14px">Com atendimento automático, a resposta é sempre imediata — 24h por dia.</p>
+      </div>
+      <div class="ccrd reveal">
+        <p class="ctitle">Quando os clientes entram em contato</p>
+        <div class="donut-wrap">
+          <svg width="110" height="110" viewBox="0 0 110 110" style="flex-shrink:0">
+            <circle cx="55" cy="55" r="44" fill="none" stroke="#F0ECE4" stroke-width="18"/>
+            <circle cx="55" cy="55" r="44" fill="none" stroke="#C9A227" stroke-width="18"
+              stroke-dasharray="276.5" stroke-dashoffset="276.5"
+              stroke-linecap="round" transform="rotate(-90 55 55)"
+              id="donut-arc" style="transition:stroke-dashoffset 1.4s ease"/>
+          </svg>
+          <div class="dlegend">
+            <div class="dleg"><span class="ddot" style="background:var(--dourado)"></span>63% fora do horário comercial</div>
+            <div class="dleg"><span class="ddot" style="background:#F0ECE4"></span>37% durante o expediente</div>
+            <p style="font-size:.75rem;color:var(--mid);margin-top:6px;line-height:1.4">Mais da metade dos contatos chegam quando a equipe não está.</p>
+          </div>
+        </div>
+      </div>
+      <div class="ccrd reveal">
+        <p class="ctitle">O impacto da presença digital</p>
+        <div class="bar-chart">
+          <div class="bar-row"><span class="bar-lbl">Pesquisam antes</span><div class="bar-track"><div class="bar-fill bf-g" data-w="87%">87%</div></div></div>
+          <div class="bar-row"><span class="bar-lbl">Desistem sem info</span><div class="bar-track"><div class="bar-fill bf-r" data-w="76%">76%</div></div></div>
+        </div>
+        <div class="stat-grid" style="margin-top:18px">
+          <div class="sbox"><div class="snum c">3×</div><div class="sdesc">mais clientes para negócios com site e resposta rápida</div></div>
+          <div class="sbox"><div class="snum c">24h</div><div class="sdesc">o atendente IA trabalha sem parar, sem custo extra</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="sec" style="background:var(--carvao)" id="como-funciona">
+  <div class="container">
+    <div class="reveal sh-dark">
+      <div class="tag">Simples assim</div>
+      <h2>Como funciona</h2>
+      <p>Você não precisa entender de tecnologia. Cuidamos de tudo remotamente e entregamos funcionando.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step reveal"><div class="step-n">01</div><h3>Conversamos sobre o seu negócio</h3><p>Você conta o que precisa — produtos, horários, perguntas frequentes. Cuidamos do resto.</p></div>
+      <div class="step reveal"><div class="step-n">02</div><h3>Configuramos tudo remotamente</h3><p>Desenvolvemos seu site e/ou atendente IA, personalizado com a identidade do seu negócio.</p></div>
+      <div class="step reveal"><div class="step-n">03</div><h3>Seu negócio começa a faturar mais</h3><p>Site no ar, atendente respondendo 24h, você focado em crescer.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- VÍDEO -->
+<section class="vid-sec">
+  <div class="container">
+    <div class="reveal sh-dark">
+      <div class="tag">Veja ao vivo</div>
+      <h2 style="color:var(--branco)">O atendente em ação</h2>
+      <p style="color:rgba(248,250,252,.58);margin-top:10px">Um atendimento real, do início ao fim, sem nenhuma intervenção humana.</p>
+    </div>
+    <div class="vid-wrap reveal" id="demoVidWrap">
+      <video id="demoVideo" src="videos/demo-bot.mp4" poster="videos/demo-bot-poster.jpg" playsinline preload="none"></video>
+      <button class="vid-play-btn" id="demoPlayBtn" aria-label="Reproduzir demonstração">
+        <span class="play-circle"><svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"/></svg></span>
+        <span>Ver demonstração real</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- DEMONSTRAÇÕES -->
+<section class="sec" style="background:var(--creme)" id="demonstracao">
+  <div class="container">
+    <div class="reveal sh-light" style="margin-bottom:48px">
+      <div class="tag tag-dark">Exemplos reais</div>
+      <h2>Veja como fica para o seu segmento</h2>
+      <p>Atendentes já configurados e funcionando. Cada um personalizado com a identidade do negócio.</p>
+    </div>
+    <div class="demo-grid">
+      <div class="demo-card reveal">
+        <div class="demo-img">
+          <img src="img/demo-restaurante.png" alt="Conversa real do atendente IA confirmando reserva em restaurante via WhatsApp" loading="lazy">
+        </div>
+        <div class="demo-body"><h3>🍔 Restaurantes e Delivery</h3><p>Cardápio interativo, recebe pedidos, calcula total e confirma — sem parar a cozinha.</p></div>
+      </div>
+      <div class="demo-card reveal">
+        <div class="demo-img">
+          <img src="img/demo-pousada.png" alt="Conversa real do atendente IA de pousada respondendo dúvidas via WhatsApp" loading="lazy">
+        </div>
+        <div class="demo-body"><h3>🏨 Pousadas e Hospedagens</h3><p>Informa quartos, datas e valores. Coleta reservas 24h, em português, inglês e espanhol.</p></div>
+      </div>
+      <div class="demo-card reveal">
+        <div class="demo-img">
+          <img src="img/demo-clinica.png" alt="Conversa real do atendente IA confirmando agendamento em clínica via WhatsApp" loading="lazy">
+        </div>
+        <div class="demo-body"><h3>🏥 Clínicas e Consultórios</h3><p>Agenda consultas, informa convênios, envia lembretes — sem sobrecarregar a recepção.</p></div>
+      </div>
+    </div>
+    <div class="demo-any reveal">
+      <strong>Para qualquer negócio que queira crescer</strong>
+      Desenvolvido para qualquer negócio que queira aparecer mais, atender melhor e vender mais. Se tem cliente, tem solução.
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="sec" style="background:var(--carvao)" id="servicos">
+  <div class="container">
+    <div class="reveal sh-dark">
+      <div class="tag">O que oferecemos</div>
+      <h2>Soluções completas de presença digital</h2>
+      <p>Cada serviço foi pensado para que o seu negócio apareça, atenda e venda mais — sem complicação.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="scard reveal">
+        <div class="scard-icon" style="background:rgba(201,162,39,.1)">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#6B5D4F" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <h3>Atendente IA no WhatsApp</h3>
+        <p>Responde clientes 24h, recebe pedidos, agenda consultas, informa preços e muito mais — tudo automaticamente no WhatsApp do seu negócio.</p>
+        <span class="scard-tag" style="background:rgba(201,162,39,.1);color:#6B5D4F">Plano Essencial e Inteligente</span>
+      </div>
+
+      <div class="scard reveal">
+        <div class="scard-icon" style="background:rgba(27,79,114,.1)">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#6B5D4F" stroke-width="2"><rect x="3" y="3" width="18" height="13" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+        </div>
+        <h3>Site Profissional</h3>
+        <p>Landing page ou site institucional desenvolvido sob medida, com design moderno, responsivo para celular e otimizado para aparecer nas buscas.</p>
+        <span class="scard-tag" style="background:rgba(27,79,114,.1);color:#6B5D4F">Sob proposta</span>
+      </div>
+
+      <div class="scard reveal">
+        <div class="scard-icon" style="background:rgba(0,160,100,.1)">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0A7055" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/><path d="M3.05 11a9 9 0 1 0 .5-2.6"/></svg>
+        </div>
+        <h3>Presença Local Inteligente</h3>
+        <p>Seu negócio aparecendo quando o cliente busca na região. Perfil local otimizado, informações sempre atualizadas, avaliações monitoradas e visibilidade nos mapas.</p>
+        <span class="scard-tag" style="background:rgba(0,160,100,.1);color:#0A7055">Preços acessíveis</span>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:40px">
+      <a href="https://wa.me/5548991366151?text=Olá! Gostaria de saber mais sobre os serviços do Atend-IA." class="btn btn-p reveal">Falar com um especialista →</a>
+    </div>
+  </div>
+</section>
+
+<!-- PLANOS -->
+<section class="sec" style="background:var(--creme)" id="planos">
+  <div class="container">
+
+    <!-- ATENDENTE IA -->
+    <div class="plans-hd reveal">
+      <div class="tag tag-dark">Atendente IA no WhatsApp</div>
+      <h2 style="color:var(--texto)">Escolha o plano do atendente</h2>
+      <p style="color:var(--mid)">Disponível em contrato de 3 ou 6 meses. Solicite uma proposta para o seu negócio.</p>
+    </div>
+    <div class="plans-grid" style="margin-bottom:72px">
+
+      <div class="pcard reveal" style="background:white;border-color:rgba(0,0,0,.09)">
+        <div class="pname" style="color:var(--texto)">Plano Essencial</div>
+        <p class="pdesc" style="color:var(--mid)">Para quem quer começar com atendimento automático profissional.</p>
+        <ul class="plist">
+          <li style="color:var(--texto)">Atendimento automático 24h, 7 dias por semana</li>
+          <li style="color:var(--texto)">Menu de opções personalizado</li>
+          <li style="color:var(--texto)">IA para organizar pedidos e calcular totais</li>
+          <li style="color:var(--texto)">Coleta de dados com envio para planilha</li>
+          <li style="color:var(--texto)">Encaminhamento para atendente humano</li>
+          <li style="color:var(--texto)">2 atualizações mensais inclusas</li>
+        </ul>
+        <a href="https://wa.me/5548991366151?text=Olá! Tenho interesse no Plano Essencial." class="btn pcta" style="background:var(--carvao);color:white;justify-content:center">Solicitar proposta →</a>
+      </div>
+
+      <div class="pcard reveal" style="background:var(--carvao);border-color:var(--dourado)">
+        <div class="pbadge">Mais completo</div>
+        <div class="pname" style="color:var(--branco)">Plano Inteligente</div>
+        <p class="pdesc" style="color:rgba(248,250,252,.6)">Para quem quer o máximo em atendimento e inteligência artificial.</p>
+        <ul class="plist">
+          <li style="color:var(--branco)">Tudo do Plano Essencial</li>
+          <li style="color:var(--branco)">IA conversacional — responde qualquer pergunta</li>
+          <li style="color:var(--branco)">Entende e responde mensagens de áudio</li>
+          <li style="color:var(--branco)">Atendimento em múltiplos idiomas</li>
+          <li style="color:var(--branco)">CRM integrado com histórico de clientes</li>
+          <li style="color:var(--branco)">Agenda em tempo real</li>
+          <li style="color:var(--branco)">Sugestões personalizadas para cada cliente</li>
+          <li style="color:var(--branco)">2 atualizações mensais inclusas</li>
+        </ul>
+        <a href="https://wa.me/5548991366151?text=Olá! Tenho interesse no Plano Inteligente." class="btn btn-p pcta">Solicitar proposta →</a>
+      </div>
+
+    </div>
+
+    <!-- SITES -->
+    <div class="plans-hd reveal" style="margin-bottom:36px">
+      <div class="tag tag-dark">Sites Profissionais</div>
+      <h2 style="color:var(--texto)">Presença digital que converte</h2>
+      <p style="color:var(--mid)">Sites modernos, responsivos e otimizados — entregues prontos, sem complicação. Solicite uma proposta para o seu negócio.</p>
+    </div>
+    <div class="services-grid reveal" style="margin-top:0;margin-bottom:48px">
+
+      <div class="scard">
+        <div class="scard-icon" style="background:rgba(27,79,114,.08)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6B5D4F" stroke-width="2"><rect x="3" y="3" width="18" height="13" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+        </div>
+        <h3>Landing Page</h3>
+        <p>Página impactante para apresentar seu negócio, captar clientes e converter visitas em contatos diretos.</p>
+        <a href="https://wa.me/5548991366151?text=Olá! Tenho interesse em uma Landing Page." class="btn btn-p" style="padding:10px 18px;font-size:.85rem;margin-top:20px">Solicitar proposta →</a>
+      </div>
+
+      <div class="scard">
+        <div class="scard-icon" style="background:rgba(27,79,114,.08)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6B5D4F" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8h10M7 11h6"/></svg>
+        </div>
+        <h3>Site Institucional</h3>
+        <p>Com identidade visual completa, ideal para negócios que precisam apresentar serviços, equipe e diferenciais.</p>
+        <a href="https://wa.me/5548991366151?text=Olá! Tenho interesse em um Site Institucional." class="btn btn-p" style="padding:10px 18px;font-size:.85rem;margin-top:20px">Solicitar proposta →</a>
+      </div>
+
+      <div class="scard">
+        <div class="scard-icon" style="background:rgba(27,79,114,.08)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6B5D4F" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Site Completo</h3>
+        <p>Projeto sob medida com funcionalidades avançadas, desenvolvido conforme a necessidade do seu negócio.</p>
+        <a href="https://wa.me/5548991366151?text=Olá! Tenho interesse em um Site Completo." class="btn btn-p" style="padding:10px 18px;font-size:.85rem;margin-top:20px">Solicitar proposta →</a>
+      </div>
+
+    </div>
+
+    <!-- DOMÍNIO + HOSPEDAGEM -->
+    <div class="reveal" style="background:white;border-radius:16px;padding:36px;border:1px solid rgba(0,0,0,.07);max-width:720px;margin:0 auto">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;flex-wrap:wrap">
+
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+            <div style="width:40px;height:40px;border-radius:10px;background:rgba(0,160,100,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A7055" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+            </div>
+            <h3 style="color:var(--texto);font-size:1rem">Domínio</h3>
+          </div>
+          <p style="color:var(--mid);font-size:.88rem;line-height:1.6">O domínio é <strong style="color:var(--texto)">registrado em nome do seu negócio</strong> desde o primeiro dia — o endereço é sempre seu. Detalhes completos na proposta personalizada.</p>
+        </div>
+
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+            <div style="width:40px;height:40px;border-radius:10px;background:rgba(27,79,114,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6B5D4F" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6" y2="6"/><line x1="6" y1="18" x2="6" y2="18"/></svg>
+            </div>
+            <h3 style="color:var(--texto);font-size:1rem">Hospedagem</h3>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:7px">
+            <div style="display:flex;align-items:center;gap:8px;font-size:.85rem;color:var(--mid)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0A7055" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Servidor dedicado</div>
+            <div style="display:flex;align-items:center;gap:8px;font-size:.85rem;color:var(--mid)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0A7055" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Certificado SSL</div>
+            <div style="display:flex;align-items:center;gap:8px;font-size:.85rem;color:var(--mid)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0A7055" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Backup periódico</div>
+            <div style="display:flex;align-items:center;gap:8px;font-size:.85rem;color:var(--mid)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0A7055" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Monitoramento e segurança</div>
+            <div style="display:flex;align-items:center;gap:8px;font-size:.85rem;color:var(--mid)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0A7055" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Atualizações mensais</div>
+            <div style="display:flex;align-items:center;gap:8px;font-size:.85rem;color:var(--mid)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0A7055" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Suporte técnico</div>
+          </div>
+        </div>
+
+      </div>
+      <div style="margin-top:24px;padding-top:24px;border-top:1px solid #F0ECE4;text-align:center">
+        <a href="https://wa.me/5548991366151?text=Olá! Quero saber mais sobre os sites do Atend-IA." class="btn btn-p">Falar sobre o meu site →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROMOÇÃO + INDICA -->
+<section class="sec" style="background:var(--carvao)">
+  <div class="container">
+    <div class="reveal sh-dark">
+      <div class="tag">Benefícios exclusivos</div>
+      <h2>Vantagens para você</h2>
+    </div>
+    <div class="promo-grid">
+      <div class="procard reveal">
+        <h3>🎁 Plano 6 meses + site grátis</h3>
+        <p>Ao contratar qualquer plano do Atendente IA por 6 meses, você recebe uma Landing Page profissional sem custo adicional. Presença digital e atendimento automático em um único pacote.</p>
+        <span class="pro-hl">Landing Page profissional incluída — sem custo adicional</span>
+      </div>
+      <div class="procard gold reveal">
+        <h3>🤝 Programa Indica e Ganha</h3>
+        <p>Indicou alguém que fechou contrato? Você ganha desconto na sua próxima mensalidade. Válido após assinatura e primeiro pagamento do indicado.</p>
+        <span class="pro-hl">Bot Essencial → desconto exclusivo na mensalidade</span><br>
+        <span class="pro-hl" style="margin-top:8px">Bot Inteligente → desconto exclusivo na mensalidade</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="sec" style="background:var(--creme)" id="contato">
+  <div class="container">
+    <div class="ct-box reveal">
+      <div class="tag tag-dark">Vamos conversar</div>
+      <h2>Pronto para faturar mais?</h2>
+      <p>Tire suas dúvidas, solicite uma demonstração gratuita ou peça uma proposta para o seu negócio.</p>
+      <div class="ct-links">
+        <a href="https://wa.me/5548991366151" class="btn btn-p" id="cta-final">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Falar no WhatsApp
+        </a>
+        <a href="mailto:minigenio7@gmail.com" class="btn" style="background:white;color:var(--texto);border:1px solid rgba(0,0,0,.12)">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          minigenio7@gmail.com
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p><strong>Atend-IA</strong> — Presença digital e atendimento inteligente para o seu negócio.</p>
+    <p style="margin-top:6px">minigenio7@gmail.com · Palhoça, Santa Catarina</p>
+  </div>
+</footer>
+
+<script>
+// PIPELINE
+const nIds=['n0','n1','n2'], cIds=['c0','c1'];
+let ps=0;
+function ge(id){return document.getElementById(id)}
+function resetPipe(){
+  nIds.forEach(id=>{const e=ge(id);if(e)e.classList.remove('on')});
+  cIds.forEach(id=>{const e=ge(id);if(e){e.classList.remove('on');void e.offsetWidth}});
+}
+function tick(){
+  resetPipe();
+  const n=ge(nIds[ps]);if(n)n.classList.add('on');
+  if(ps<cIds.length){const cap=ps;setTimeout(()=>{const c=ge(cIds[cap]);if(c)c.classList.add('on')},500)}
+  ps=(ps+1)%nIds.length;
+}
+tick();setInterval(tick,2000);
+
+// SCROLL REVEAL
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// BAR CHARTS
+const bObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.bar-fill').forEach(b=>{b.style.width=b.dataset.w});bObs.unobserve(e.target)}})},{threshold:.3});
+document.querySelectorAll('.ccrd').forEach(c=>bObs.observe(c));
+
+// VÍDEO DEMO (play on click)
+(function(){
+  const v=document.getElementById('demoVideo'), btn=document.getElementById('demoPlayBtn');
+  if(!v||!btn)return;
+  btn.addEventListener('click',function(){
+    v.preload='auto';
+    v.play();
+    btn.classList.add('hidden');
+  });
+  v.addEventListener('pause',function(){btn.classList.remove('hidden')});
+  v.addEventListener('ended',function(){btn.classList.remove('hidden')});
+})();
+
+// SPOTLIGHT BORDER (planos)
+document.querySelectorAll('.plans-grid').forEach(function(grid){
+  grid.addEventListener('mousemove',function(e){
+    grid.querySelectorAll('.pcard').forEach(function(c){
+      const r=c.getBoundingClientRect();
+      c.style.setProperty('--mx',(e.clientX-r.left)+'px');
+      c.style.setProperty('--my',(e.clientY-r.top)+'px');
+    });
+  });
+});
+
+// BOTÃO MAGNÉTICO (CTAs principais)
+['cta-hero','cta-final'].forEach(function(id){
+  const btn=document.getElementById(id);
+  if(!btn)return;
+  btn.addEventListener('mousemove',function(e){
+    const r=btn.getBoundingClientRect();
+    const cx=r.left+r.width/2, cy=r.top+r.height/2;
+    const bx=(e.clientX-cx)*0.18, by=(e.clientY-cy)*0.18;
+    btn.style.transform='translate('+bx+'px,'+by+'px)';
+  });
+  btn.addEventListener('mouseleave',function(){btn.style.transform='translate(0,0)'});
+});
+// DONUT
+const dObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){const a=document.getElementById('donut-arc');if(a)a.style.strokeDashoffset=276.5*(1-.63);dObs.unobserve(e.target)}})},{threshold:.4});
+const dw=document.querySelector('.donut-wrap');if(dw)dObs.observe(dw);
+</script>
+</body>
+</html>
